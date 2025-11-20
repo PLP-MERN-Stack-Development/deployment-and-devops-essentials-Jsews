@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "tailwindcss";
+
+/* small custom rules */
+body {
+  @apply bg-gradient-to-b from-gold to-pink-50;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+.container-max {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
