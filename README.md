@@ -230,12 +230,14 @@ Maintenance:
 
 ---
 
-## 🖼️ Screenshots (Add in `/screenshots`)
+## 🖼️ Screenshots 
 
 * Home Page
-* Courses Page
-* Dashboard
-* Monitoring Panel
+* Services page
+  <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/baebba5b-06f0-48f1-8379-f85d39b6f485" />
+  <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/d3602670-c471-4ce4-be20-ee007b6f037d" />
+
+
 
 ---
 
@@ -248,5 +250,6 @@ Developed by **Janice Tusiime Sewava**
 ## 📜 License
 
 MIT License
+
 
 
