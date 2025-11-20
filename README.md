@@ -1,77 +1,250 @@
-# Deployment and DevOps for MERN Applications
+# 📘 EduDraft – Full MERN Stack Application (React CRA Version)
 
-This assignment focuses on deploying a full MERN stack application to production, implementing CI/CD pipelines, and setting up monitoring for your application.
+A complete MERN (MongoDB, Express, React, Node.js) educational platform built using **Create React App**, not Vite. This README version reflects the structure and commands before switching to Vite.
 
-## Assignment Overview
+---
 
-You will:
-1. Prepare your MERN application for production deployment
-2. Deploy the backend to a cloud platform
-3. Deploy the frontend to a static hosting service
-4. Set up CI/CD pipelines with GitHub Actions
-5. Implement monitoring and maintenance strategies
+## 🚀 Overview
 
-## Getting Started
+EduDraft is a learning platform allowing users to browse courses, enroll, authenticate, and access dashboards. Built using the MERN stack, it supports production deployment, monitoring, and CI/CD.
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Follow the setup instructions in the `Week7-Assignment.md` file
-4. Use the provided templates and configuration files as a starting point
+This README includes:
 
-## Files Included
+* Project setup
+* CRA-based frontend guide
+* Backend setup
+* Environment variables
+* Deployment guide
+* CI/CD workflows
+* Monitoring setup
 
-- `Week7-Assignment.md`: Detailed assignment instructions
-- `.github/workflows/`: GitHub Actions workflow templates
-- `deployment/`: Deployment configuration files and scripts
-- `.env.example`: Example environment variable templates
-- `monitoring/`: Monitoring configuration examples
+---
 
-## Requirements
+## 📂 Project Structure
 
-- A completed MERN stack application from previous weeks
-- Accounts on the following services:
-  - GitHub
-  - MongoDB Atlas
-  - Render, Railway, or Heroku (for backend)
-  - Vercel, Netlify, or GitHub Pages (for frontend)
-- Basic understanding of CI/CD concepts
+```
+## File Structure
+edudraft/
+├─ backend/
+│ ├─ package.json
+│ ├─ server.js
+│ ├─ src/
+│ │ ├─ routes/
+│ │ │ └─ api.js
+│ │ ├─ controllers/
+│ │ │ └─ courseController.js
+│ │ ├─ utils/
+│ │ │ └─ logger.js
+│ │ └─ sentry.js
+│ └─ .env.example
+├─ frontend/
+│ ├─ package.json
+│ ├─ public/
+│ │ ├─ index.html
+│ │ └─ images/ (place image files here: hero.jpg, course1.jpg, course2.jpg)
+│ └─ src/
+│ ├─ index.js
+│ ├─ App.jsx
+│ ├─ components/
+│ │ ├─ CourseCard.jsx
+│ │ └─ Header.jsx
+│ ├─ pages/
+│ │ └─ Home.jsx
+│ └─ styles/
+│ └─ main.css
+├─ .github/
+│ └─ workflows/
+│ ├─ backend-ci.yml
+│ ├─ backend-cd-render.yml
+│ ├─ frontend-ci.yml
+│ └─ frontend-cd-vercel.yml
+├─ README.md
+└─ .gitignore
 
-## Deployment Platforms
+---
 
-### Backend Deployment Options
-- **Render**: Easy to use, free tier available
-- **Railway**: Developer-friendly, generous free tier
-- **Heroku**: Well-established, extensive documentation
+## 🧰 Technologies Used
 
-### Frontend Deployment Options
-- **Vercel**: Optimized for React apps, easy integration
-- **Netlify**: Great for static sites, good CI/CD
-- **GitHub Pages**: Free, integrated with GitHub
+### **Frontend (React – Create React App)**
 
-## CI/CD Pipeline
+* Create React App
+* React Router DOM
+* TailwindCSS or normal CSS
+* Axios
+* JWT auth handling
 
-The assignment includes templates for setting up GitHub Actions workflows:
-- `frontend-ci.yml`: Tests and builds the React application
-- `backend-ci.yml`: Tests the Express.js backend
-- `frontend-cd.yml`: Deploys the frontend to your chosen platform
-- `backend-cd.yml`: Deploys the backend to your chosen platform
+### **Backend (Node.js + Express)**
 
-## Submission
+* Express.js
+* MongoDB + Mongoose
+* JWT Authentication
+* CORS, Helmet, Compression
+* Winston logger
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+### **CI/CD**
 
-1. Complete all deployment tasks
-2. Set up CI/CD pipelines with GitHub Actions
-3. Deploy both frontend and backend to production
-4. Document your deployment process in the README.md
-5. Include screenshots of your CI/CD pipeline in action
-6. Add URLs to your deployed applications
+* GitHub Actions
+* Automatic testing + building
+* Deployment pipelines
 
-## Resources
+### **Monitoring**
 
-- [GitHub Actions Documentation](https://docs.github.com/en/actions)
-- [MongoDB Atlas Documentation](https://docs.atlas.mongodb.com/)
-- [Render Documentation](https://render.com/docs)
-- [Railway Documentation](https://docs.railway.app/)
-- [Vercel Documentation](https://vercel.com/docs)
-- [Netlify Documentation](https://docs.netlify.com/) 
+* Health checks
+* Error logs
+* UptimeRobot/Sentry compatible
+
+---
+
+## 🛠️ Local Installation
+
+### **1️⃣ Clone the repository**
+
+```bash
+git clone <https://github.com/PLP-MERN-Stack-Development/deployment-and-devops-essentials-Jsews.git>
+cd EduDraft
+```
+
+### **2️⃣ Install dependencies**
+
+#### Backend
+
+```bash
+cd backend
+npm install
+```
+
+#### Frontend (CRA)
+
+```bash
+cd ../frontend
+npm install
+```
+
+### **3️⃣ Configure environment variables**
+
+Copy `.env.example` → create `.env` inside **frontend** and **backend**.
+
+#### **Backend `.env`**
+
+```
+PORT=5000
+MONGO_URI=mongodb://127.0.0.1:27017/edudraft
+JWT_SECRET=your_secret_here
+NODE_ENV=development
+```
+
+#### **Frontend `.env` (CRA format)**
+
+```
+REACT_APP_API_URL=http://localhost:5000
+```
+
+> Note: CRA requires env variables to start with `REACT_APP_`
+
+### **4️⃣ Run the app locally**
+
+#### Backend
+
+```bash
+npm run dev
+```
+
+#### Frontend (Create React App)
+
+```bash
+npm start
+```
+
+---
+
+## 🌐 Deployment Instructions
+
+### **Backend Deployment (Render / Railway / Heroku)**
+
+1. Connect GitHub Repo
+2. Add backend environment variables
+3. Auto-deploy enabled
+
+### **Frontend Deployment (Netlify )**
+
+* Build command:
+
+```bash
+npm run build
+```
+
+* Publish folder:
+
+```
+build
+```
+
+* Add env variable:
+
+```
+REACT_APP_API_URL=<your backend URL>
+```
+
+---
+
+## 🔄 CI/CD Setup
+
+Located in `.github/workflows/`:
+
+* `backend-ci.yml` – builds + tests backend
+* `frontend-ci.yml` – builds React CRA app
+* `backend-cd.yml` – deploys backend
+* `frontend-cd.yml` – deploys frontend
+
+CI includes:
+
+* ESLint
+* Automated builds
+* Deployment triggers
+
+---
+
+## 📊 Monitoring & Maintenance
+
+Monitoring tools include:
+
+* `/api/health` endpoint
+* Winston logs
+* Optional Sentry integration
+* UptimeRobot-friendly checks
+
+Maintenance:
+
+* Weekly dependency updates
+* MongoDB backups
+* Error log reviews
+
+---
+
+## 🌍 Deployment URLs
+
+(Replace after deployment)
+
+* **Frontend:** [https://your-frontend.com](https://your-frontend.com)
+* **Backend:** [https://your-backend.com/api](https://your-backend.com/api)
+
+---
+
+## 🖼️ Screenshots (Add in `/screenshots`)
+
+* Home Page
+* Courses Page
+* Dashboard
+* Monitoring Panel
+
+---
+
+## 🙌 Author
+
+Developed by **Janice Tusiime Sewava**
+
+---
+
+## 📜 License
+
+MIT License
