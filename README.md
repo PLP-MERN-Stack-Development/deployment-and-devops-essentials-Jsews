@@ -225,7 +225,7 @@ Maintenance:
 
 (Replace after deployment)
 
-* **Frontend:** [https://your-frontend.com](https://edudraft.netlify.app/)
+* **Frontend:** [https://edudraft.netlify.app/](https://edudraft.netlify.app/)
 * **Backend:** [https://your-backend.com/api](https://your-backend.com/api)
 
 ---
@@ -248,4 +248,5 @@ Developed by **Janice Tusiime Sewava**
 ## 📜 License
 
 MIT License
+
 
